@@ -1,0 +1,7 @@
+needs a lot of optimization
+seems to work okay locally, but when a lot of regions are showing at the same time, gets laggy
+make ui look good
+    - ensure ui also looks good on mobile
+maybe pre-load all images, and instead of creating new <Image> components each time,
+    - can just render them visible or invisible, based on if they are checked or not
+    - (so blank map actually has all region <Image>s on it alreaday, just invisible)
