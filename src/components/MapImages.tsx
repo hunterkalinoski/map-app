@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { memo } from "react";
 import { useEffect, useState } from "react";
 
 const WIDTH = "1440";
@@ -53,9 +54,11 @@ const REGIONS = [
 ];
 
 export default function MapImages({ regions }: { regions: string[] }) {
-  const [showLabels, setShowLabels] = useState(false);
-  const [showLabelOutlines, setShowLabelOutlines] = useState(false);
+  const [showLabels, setShowLabels] = useState(true);
+  const [showLabelOutlines, setShowLabelOutlines] = useState(true);
   const [fillOpacity, setFillOpacity] = useState(50);
+
+  console.log(showLabels, showLabelOutlines);
 
   return (
     <div className="flex flex-col">
@@ -93,42 +96,53 @@ export default function MapImages({ regions }: { regions: string[] }) {
           priority
         />
         {regions.map((region, index) => {
-          let labelDir = "Labels";
-          if (showLabelOutlines) {
-            labelDir = "LabelsOuterGlow";
-          }
-          const labelSrc = "/Map_1/" + labelDir + "/" + region + ".png";
+          const labelSrc = "/Map_1/Labels/" + region + ".png";
+          const labelOutlinedSrc = "/Map_1/LabelsOuterGlow/" + region + ".png";
           const regionOutlineSrc = "/Map_1/RegionsOutline/" + region + ".png";
           const regionFillSrc = "/Map_1/Regions/" + region + ".png";
           return (
             <div key={region}>
               {/* Region label image */}
-              <Image
-                className="absolute top-0 left-0"
-                src={labelSrc}
-                alt={region + " label"}
-                width={WIDTH}
-                height={HEIGHT}
-                hidden={showLabels}
-              />
-              {/* Region outline image */}
-              <Image
-                className="absolute top-0 left-0"
-                src={regionOutlineSrc}
-                alt={region + " region"}
-                width={WIDTH}
-                height={HEIGHT}
-              />
-              {/* Region fill image */}
-              <div style={{ opacity: fillOpacity / 100 }}>
+              {showLabels && !showLabelOutlines && (
                 <Image
                   className="absolute top-0 left-0"
-                  src={regionFillSrc}
+                  src={labelSrc}
+                  alt={region + " label"}
+                  width={WIDTH}
+                  height={HEIGHT}
+                />
+              )}
+              {showLabels && showLabelOutlines && (
+                <Image
+                  className="absolute top-0 left-0"
+                  src={labelOutlinedSrc}
+                  alt={region + " label"}
+                  width={WIDTH}
+                  height={HEIGHT}
+                />
+              )}
+              {/* Region outline image */}
+              {fillOpacity !== 100 && (
+                <Image
+                  className="absolute top-0 left-0"
+                  src={regionOutlineSrc}
                   alt={region + " region"}
                   width={WIDTH}
                   height={HEIGHT}
                 />
-              </div>
+              )}
+              {/* Region fill image */}
+              {fillOpacity !== 0 && (
+                <div style={{ opacity: fillOpacity / 100 }}>
+                  <Image
+                    className="absolute top-0 left-0"
+                    src={regionFillSrc}
+                    alt={region + " region"}
+                    width={WIDTH}
+                    height={HEIGHT}
+                  />
+                </div>
+              )}
             </div>
           );
         })}
