@@ -121,6 +121,33 @@ export default function Page() {
   const [showLabelsGlow, setShowLabelsGlow] = useState(true);
   const [fillOpacity, setFillOpacity] = useState(50);
 
+  useEffect(() => {
+    // redefining highlightRandomRegion to prevent errors
+    const highlight = () => {
+      const newRegionsVisible = { temp: false };
+
+      const randomRegion = REGIONS[Math.floor(Math.random() * REGIONS.length)];
+
+      newRegionsVisible[randomRegion as keyof typeof regionsVisible] = true;
+
+      setRegionsVisible(newRegionsVisible);
+    };
+    const detectKeyDown = (e: KeyboardEvent) => {
+      if (e.key == " ") {
+        // prevents activating other buttons if selected
+        e.preventDefault();
+        highlight();
+      } else if (e.key == "l") {
+        setShowLabels(!showLabels);
+      }
+    };
+    document.addEventListener("keydown", detectKeyDown, true);
+
+    return function cleanup() {
+      document.removeEventListener("keydown", detectKeyDown, true);
+    };
+  }, [showLabels]);
+
   const checkboxChanged = (region: string, e: any) => {
     // replaces spaces with hyphens (' ' -> '-') and slashes to underscores ('/' -> '_')
     const convertedRegion = region.replace(/\s+/g, "-").replace(/\//g, "_");
@@ -143,8 +170,6 @@ export default function Page() {
     const randomRegion = REGIONS[Math.floor(Math.random() * REGIONS.length)];
 
     newRegionsVisible[randomRegion as keyof typeof regionsVisible] = true;
-
-    console.log(randomRegion);
 
     setRegionsVisible(newRegionsVisible);
   };
@@ -170,7 +195,7 @@ export default function Page() {
       {/* controls */}
       <div className="flex flex-row gap-8 p-4 items-center">
         <button className="bg-blue-400 p-8" onClick={() => setShowLabels(!showLabels)}>
-          Switch Label Visibility
+          Switch Label Visibility (&apos;L&apos;)
         </button>
         <button className="bg-blue-500 p-8" onClick={() => setShowLabelsGlow(!showLabelsGlow)}>
           Switch Show Label Outlines
@@ -556,7 +581,7 @@ export default function Page() {
         </div>
       </div>
       <button className="bg-blue-400 p-8" onClick={highlightRandomRegion}>
-        Highlight random region
+        Highlight random region (Spacebar)
       </button>
     </div>
   );

@@ -12,7 +12,6 @@
 
 !! Create and import map 2
 
-
 ================================================
 ** LATER
 
@@ -28,10 +27,7 @@
         - bad UX
     - importance to fix this is low atm
 
-** Option to hide checkboxes (for when doing random, so answer isn't spoiled)
-** Hotkey to go random, and toggle labels (for easy studying)
-    - ex. clicking space goes next region, and 'l' toggles labels on and off
-    - so you don't need to move mouse around so much, easier to study like this (quicker)
+!! Option to hide checkboxes (for when doing random, so answer isn't spoiled)
 
 
 ================================================
