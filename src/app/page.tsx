@@ -6,6 +6,52 @@ import { useEffect, useRef, useState } from "react";
 const WIDTH = 1440;
 const HEIGHT = 723;
 
+const REGIONS = [
+  "Adirondacks",
+  "Appalachian-(Cumberland-and-Alleghany)-Mountains",
+  "Basin-and-Range",
+  "Black-Belt",
+  "Black-Hills",
+  "Bluegrass-Basin",
+  "Blue-Ridges_Smoky-Mountains",
+  "Cape-Cod",
+  "Cascade-Mountains",
+  "Catskills",
+  "Central-Valley",
+  "Coast-Ranges",
+  "Colorado-Plateau",
+  "Columbia-Plateau",
+  "Death-Valley",
+  "Delmarva-Peninsula",
+  "Driftless-Area",
+  "Florida-Keys",
+  "Front-Range",
+  "Grand-Canyon",
+  "Grand-Tetons",
+  "Idaho-Batholith",
+  "Llano-Estacado",
+  "Lower-Mississippi-River-Basin",
+  "Missouri-Plateau",
+  "Mojave-Desert",
+  "Nashville-Basin",
+  "Ouachita-Mountains",
+  "Outer-Banks",
+  "Ozark-Plateau",
+  "Piedmont",
+  "Ridge-And-Valley",
+  "Sand-Hills",
+  "Sangre-de-Cristo-Mountains",
+  "Sea-Islands",
+  "Snake-River-Lava-Plain",
+  "Sierra-Nevada-Mountains",
+  "Sonoran-Desert",
+  "St.-Lawrence-Lowlands",
+  "Texas-Hill-Country",
+  "Wasatch-Mountains",
+  "Willamette-Valley",
+  "Yazoo+Mississippi-Delta",
+];
+
 interface MyComponentProps {
   region: string;
   visible: boolean;
@@ -67,8 +113,9 @@ function RegionImages({
 }
 
 export default function Page() {
+  // temp so ts can infer the type
   const [regionsVisible, setRegionsVisible] = useState({
-    Adirondacks: false,
+    temp: true,
   });
   const [showLabels, setShowLabels] = useState(true);
   const [showLabelsGlow, setShowLabelsGlow] = useState(true);
@@ -90,6 +137,18 @@ export default function Page() {
     setRegionsVisible(newRegionsVisible);
   };
 
+  const highlightRandomRegion = () => {
+    const newRegionsVisible = { temp: false };
+
+    const randomRegion = REGIONS[Math.floor(Math.random() * REGIONS.length)];
+
+    newRegionsVisible[randomRegion as keyof typeof regionsVisible] = true;
+
+    console.log(randomRegion);
+
+    setRegionsVisible(newRegionsVisible);
+  };
+
   const Checkbox = ({ region }: { region: string }) => {
     const convertedRegion = region.replace(/-/g, " ").replace(/_/g, "/").replace(/\+/g, "-");
 
@@ -107,7 +166,7 @@ export default function Page() {
   };
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-1">
       {/* controls */}
       <div className="flex flex-row gap-8 p-4 items-center">
         <button className="bg-blue-400 p-8" onClick={() => setShowLabels(!showLabels)}>
@@ -448,7 +507,7 @@ export default function Page() {
           />
         </div>
         {/* checkboxes */}
-        <div className="overflow-y-scroll overflow-x-hidden h-[70vh]">
+        <div className="overflow-y-scroll overflow-x-hidden h-[60vh]">
           <ul className="ml-4">
             <Checkbox region="Adirondacks" />
             <Checkbox region="Appalachian-(Cumberland-and-Alleghany)-Mountains" />
@@ -496,6 +555,9 @@ export default function Page() {
           </ul>
         </div>
       </div>
+      <button className="bg-blue-400 p-8" onClick={highlightRandomRegion}>
+        Highlight random region
+      </button>
     </div>
   );
 }
