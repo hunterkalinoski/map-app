@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 // const WIDTH = 1440;
 const WIDTH = 1000;
 // const HEIGHT = 723;
-const HEIGHT = 502;
+const HEIGHT = 200;
 
 const REGIONS = [
   "Alabama",

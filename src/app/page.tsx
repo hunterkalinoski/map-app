@@ -47,8 +47,8 @@ export default function Page() {
           <li className="bg-slate-800 p-4 rounded-lg hover:bg-slate-700">
             <h2>Canadian Territories and Provinces Map</h2>
             <Image
-              src="/Map_1/Background.png"
-              alt="Map 1 background"
+              src="/Canada_map/Background.png"
+              alt="Canada map background"
               width={400}
               height={200}
               className="w-[400px] h-[200px]"
