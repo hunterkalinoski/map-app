@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <div className="flex flex-col gap-8 items-center pt-8">
+    <div className="flex flex-col gap-8 items-center pt-20">
       <h1 className="text-3xl">Select a Map</h1>
 
       <ul className="gap-8 grid grid-rows-2 grid-cols-2">
