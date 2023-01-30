@@ -40,7 +40,7 @@ const REGIONS = [
   "Outer-Banks",
   "Ozark-Plateau",
   "Piedmont",
-  "Ridge-And-Valley",
+  "Ridge-and-Valley",
   "Sand-Hills",
   "Sangre-de-Cristo-Mountains",
   "Sea-Islands",
@@ -474,8 +474,8 @@ export default function Page() {
             fillOpacity={fillOpacity}
           />
           <RegionImages
-            region="Ridge-And-Valley"
-            visible={regionsVisible["Ridge-And-Valley" as keyof typeof regionsVisible]}
+            region="Ridge-and-Valley"
+            visible={regionsVisible["Ridge-and-Valley" as keyof typeof regionsVisible]}
             showLabel={showLabels}
             showLabelGlow={showLabelsGlow}
             fillOpacity={fillOpacity}
@@ -592,7 +592,7 @@ export default function Page() {
             <Checkbox region="Outer-Banks" />
             <Checkbox region="Ozark-Plateau" />
             <Checkbox region="Piedmont" />
-            <Checkbox region="Ridge-And-Valley" />
+            <Checkbox region="Ridge-and-Valley" />
             <Checkbox region="Sand-Hills" />
             <Checkbox region="Sangre-de-Cristo-Mountains" />
             <Checkbox region="Sea-Islands" />
