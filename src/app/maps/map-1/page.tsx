@@ -3,8 +3,10 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const WIDTH = 1440;
-const HEIGHT = 723;
+// const WIDTH = 1440;
+const WIDTH = 1000;
+// const HEIGHT = 723;
+const HEIGHT = 502;
 
 const REGIONS = [
   "Adirondacks",
