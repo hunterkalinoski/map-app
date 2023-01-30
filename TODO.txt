@@ -4,37 +4,10 @@
     - one on initial page load, when fetching all the images
         - probably show background image with a loader on top of it
 
-!! Change label buttons to checkboxes or switches
-    - doesn't make sense as a button when they are on/off values
-
-!! More pages
-    - home/welcome page that directs you to a diff page for each map.
-
-!! Create and import map 2
-
 ================================================
 ** LATER
 
 ** make ui look good
     - ensure ui also looks good on mobile
 
-
-** Network optimized (images are only fetched once),
-    but still laggy when doing actions with a lot of regions showing
-    - lags a little on opacity changing, label switching, and even marking regions visible
-    - to fix, possibly memoize some components with useCallback or useMemo
-    - alternatively, limit number of selected regions to ~10
-        - bad UX
-    - importance to fix this is low atm
-
 !! Option to hide checkboxes (for when doing random, so answer isn't spoiled)
-
-
-================================================
-?? STRETCH:
-    users can draw and submit their own maps
-    users also have a db document, with their owned maps
-    maps can be public or private
-    home page shows featured maps (the ones i make)
-    search page that shows publicly shared maps
-    can view privately shared maps on your own profile page
