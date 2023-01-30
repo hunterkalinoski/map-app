@@ -82,6 +82,7 @@ function RegionImages({
         alt={region + " outline"}
         width={WIDTH}
         height={HEIGHT}
+        draggable={false}
       />
       <Image
         className="absolute left-0 top-0"
@@ -91,6 +92,7 @@ function RegionImages({
         width={WIDTH}
         height={HEIGHT}
         style={{ opacity: fillOpacity / 100 }}
+        draggable={false}
       />
       <Image
         className="absolute left-0 top-0"
@@ -100,6 +102,7 @@ function RegionImages({
         width={WIDTH}
         height={HEIGHT}
         hidden={!showLabel || showLabelGlow}
+        draggable={false}
       />
       <Image
         className="absolute left-0 top-0"
@@ -109,6 +112,7 @@ function RegionImages({
         width={WIDTH}
         height={HEIGHT}
         hidden={!showLabel || !showLabelGlow}
+        draggable={false}
       />
     </div>
   );
@@ -246,6 +250,7 @@ export default function Page() {
             width={WIDTH}
             height={HEIGHT}
             priority
+            draggable={false}
           />
           <RegionImages
             region="Adirondacks"
