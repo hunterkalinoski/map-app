@@ -193,7 +193,7 @@ export default function Page() {
   };
 
   return (
-    <div className="flex flex-col gap-1 pt-20">
+    <div className="flex flex-col gap-1 pt-20 px-20">
       <h1 className="text-3xl self-center">Map Test 1 (North American Geography)</h1>
       {/* controls */}
       <div className="flex flex-row gap-8 p-4 items-center">
@@ -554,7 +554,7 @@ export default function Page() {
           />
         </div>
         {/* checkboxes */}
-        <div className="overflow-y-scroll overflow-x-hidden h-[60vh]">
+        <div className="overflow-y-scroll overflow-x-hidden h-[55vh]">
           <ul className="ml-4">
             <Checkbox region="Adirondacks" />
             <Checkbox region="Appalachian-(Cumberland-and-Alleghany)-Mountains" />
