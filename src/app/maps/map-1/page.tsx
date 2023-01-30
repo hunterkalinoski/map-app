@@ -191,28 +191,48 @@ export default function Page() {
   };
 
   return (
-    <div className="flex flex-col gap-1  pt-20">
+    <div className="flex flex-col gap-1 pt-20">
+      <h1 className="text-3xl self-center">Map Test 1 (North American Geography)</h1>
       {/* controls */}
       <div className="flex flex-row gap-8 p-4 items-center">
-        <button className="bg-blue-400 p-8" onClick={() => setShowLabels(!showLabels)}>
-          Switch Label Visibility (&apos;L&apos;)
-        </button>
-        <button className="bg-blue-500 p-8" onClick={() => setShowLabelsGlow(!showLabelsGlow)}>
-          Switch Show Label Outlines
-        </button>
-        <label
-          htmlFor="opacity-range"
-          className="mb-2 text-sm font-medium text-gray-900 dark:text-white"
-        >
-          Fill Opacity
-        </label>
-        <input
-          id="opacity-range"
-          type="range"
-          value={fillOpacity}
-          onChange={(e) => setFillOpacity(parseInt(e.target.value))}
-          className=" h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
-        ></input>
+        {/* show labels checkbox */}
+        <div className="flex items-center">
+          <input
+            id="label-visibility-checkbox"
+            type="checkbox"
+            checked={showLabels}
+            className="w-4 h-4 text-blue-600 rounded bg-gray-700 border-gray-600"
+            onChange={(e) => setShowLabels(e.target.checked)}
+          />
+          <label htmlFor="label-visibility-checkbox" className="ml-2 text-sm font-medium">
+            Show Labels (&apos;L&apos;)
+          </label>
+        </div>
+        {/* label outline checkbox */}
+        <div className="flex items-center">
+          <input
+            id="label-outlines-checkbox"
+            type="checkbox"
+            checked={showLabelsGlow}
+            className="w-4 h-4 text-blue-600 rounded bg-gray-700 border-gray-600"
+            onChange={(e) => setShowLabelsGlow(e.target.checked)}
+          />
+          <label htmlFor="label-outlines-checkbox" className="ml-2 text-sm font-medium">
+            Show Labels Outline
+          </label>
+        </div>
+        <div className="flex items-center gap-2">
+          <label htmlFor="opacity-range" className="text-sm font-medium">
+            Fill Opacity
+          </label>
+          <input
+            id="opacity-range"
+            type="range"
+            value={fillOpacity}
+            onChange={(e) => setFillOpacity(parseInt(e.target.value))}
+            className=" h-2 rounded-lg appearance-none cursor-pointer bg-gray-700"
+          />
+        </div>
       </div>
 
       {/* image part */}
