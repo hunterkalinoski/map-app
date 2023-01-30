@@ -10,25 +10,49 @@ export default function Page() {
         <Link href="/maps/map-1">
           <li className="bg-slate-800 p-4 rounded-lg hover:bg-slate-700">
             <h2>Map Test 1 (North American Geography)</h2>
-            <Image src="/Map_1/Background.png" alt="Map 1 background" width={400} height={250} />
+            <Image
+              src="/Map_1/Background.png"
+              alt="Map 1 background"
+              width={400}
+              height={200}
+              className="w-[400px] h-[200px]"
+            />
           </li>
         </Link>
-        <Link href="/maps/test-2">
+        <Link href="/maps/map-2">
           <li className="bg-slate-800 p-4 rounded-lg hover:bg-slate-700">
             <h2>Map Test 2 (Native American Places)</h2>
-            <Image src="/Map_1/Background.png" alt="Map 1 background" width={400} height={250} />
+            <Image
+              src="/Map_1/Background.png"
+              alt="Map 2 background"
+              width={400}
+              height={200}
+              className="w-[400px] h-[200px]"
+            />
           </li>
         </Link>
         <Link href="/maps/states">
           <li className="bg-slate-800 p-4 rounded-lg hover:bg-slate-700">
             <h2>US States Map</h2>
-            <Image src="/Map_1/Background.png" alt="Map 1 background" width={400} height={250} />
+            <Image
+              src="/States_map/Background.png"
+              alt="States Map background"
+              width={400}
+              height={200}
+              className="w-[400px] h-[200px]"
+            />
           </li>
         </Link>
         <Link href="/maps/canada">
           <li className="bg-slate-800 p-4 rounded-lg hover:bg-slate-700">
             <h2>Canadian Territories and Provinces Map</h2>
-            <Image src="/Map_1/Background.png" alt="Map 1 background" width={400} height={250} />
+            <Image
+              src="/Map_1/Background.png"
+              alt="Map 1 background"
+              width={400}
+              height={200}
+              className="w-[400px] h-[200px]"
+            />
           </li>
         </Link>
       </ul>
