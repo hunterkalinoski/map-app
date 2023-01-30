@@ -205,7 +205,7 @@ export default function Page() {
 
   return (
     <div className="flex flex-col gap-1 pt-20 px-20">
-      <h1 className="text-3xl self-center">Map Test 1 (North American Geography)</h1>
+      <h1 className="text-3xl self-center">US States Map</h1>
       {/* controls */}
       <div className="flex flex-row gap-8 p-4 items-center">
         {/* show labels checkbox */}
