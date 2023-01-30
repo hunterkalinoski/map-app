@@ -21,9 +21,9 @@ export default function Page() {
         </Link>
         <Link href="/maps/map-2">
           <li className="bg-slate-800 p-4 rounded-lg hover:bg-slate-700">
-            <h2>Map Test 2 (Native American Places)</h2>
+            <h2>Map Test 2 (Native American Places + Water)</h2>
             <Image
-              src="/Map_1/Background.png"
+              src="/Map_2/Background.png"
               alt="Map 2 background"
               width={400}
               height={200}
