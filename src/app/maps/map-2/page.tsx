@@ -477,7 +477,6 @@ export default function Page() {
         {/* checkboxes */}
         <div className="overflow-y-scroll overflow-x-hidden h-[55vh]">
           <ul className="ml-4">
-            <Checkbox region="Adirondacks" />
             <Checkbox region="Atchafalaya-River" />
             <Checkbox region="Bay-of-Fundy" />
             <Checkbox region="Bonneville-Salt-Flats" />
