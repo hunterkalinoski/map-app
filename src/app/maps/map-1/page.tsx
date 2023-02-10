@@ -3,9 +3,9 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-// const WIDTH = 1440;
-const WIDTH = 1000;
-// const HEIGHT = 723;
+const WIDTH = 800;
+
+// doesn't matter
 const HEIGHT = 200;
 
 const REGIONS = [
@@ -197,10 +197,10 @@ export default function Page() {
   };
 
   return (
-    <div className="flex flex-col gap-1 pt-20 px-20">
+    <div className="flex flex-col gap-1 pt-20 px-8 md:px-20">
       <h1 className="text-3xl self-center">Map Test 1 (North American Geography)</h1>
       {/* controls */}
-      <div className="flex flex-row gap-8 p-4 items-center">
+      <div className="flex flex-col md:flex-row gap-8 p-4 items-center">
         {/* show labels checkbox */}
         <div className="flex items-center">
           <input
@@ -227,6 +227,7 @@ export default function Page() {
             Show Labels Outline
           </label>
         </div>
+        {/* fill opacity slider */}
         <div className="flex items-center gap-2">
           <label htmlFor="opacity-range" className="text-sm font-medium">
             Fill Opacity
@@ -242,7 +243,7 @@ export default function Page() {
       </div>
 
       {/* image part */}
-      <div className="flex flex-row">
+      <div className="flex flex-col md:flex-row">
         <div className="relative max-w-max">
           <Image
             src="/Map_1/Background.png"
@@ -559,8 +560,8 @@ export default function Page() {
           />
         </div>
         {/* checkboxes */}
-        <div className="overflow-y-scroll overflow-x-hidden h-[55vh]">
-          <ul className="ml-4">
+        <div className="border border-slate-600 mt-2 md:mt-0 md:ml-2 overflow-y-hidden overflow-x-scroll md:overflow-y-scroll md:overflow-x-hidden md:h-[55vh]">
+          <ul className="ml-4 flex flex-row gap-2 md:inline-block">
             <Checkbox region="Adirondacks" />
             <Checkbox region="Appalachian-(Cumberland-and-Alleghany)-Mountains" />
             <Checkbox region="Basin-and-Range" />
