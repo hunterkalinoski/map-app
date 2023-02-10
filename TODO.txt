@@ -4,10 +4,27 @@
     - one on initial page load, when fetching all the images
         - probably show background image with a loader on top of it
 
+!! make ui look good
+    - ensure ui also looks good on mobile
+
+!! map 3 when assigned
+
+!! test mode (iterate over all regions ONCE without label, prompting user to enter the name)
+
+
 ================================================
 ** LATER
 
-** make ui look good
-    - ensure ui also looks good on mobile
 
-!! Option to hide checkboxes (for when doing random, so answer isn't spoiled)
+** Option to hide checkboxes (for when doing random, so answer isn't spoiled)
+
+
+** backend with auth and db.
+	- users can sign in and store their test mode data (48/50, missed item1, item3)
+
+** tips page that gives tips to study more efficiently
+	- use spotify lofi music playlist
+	- even though you aced a test, doesn't mean you know everything, so try again
+	- study in small increments multiple times
+		- 4 5 min sessions WAY BETTER than 1 20 min session.
+
