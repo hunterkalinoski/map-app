@@ -245,7 +245,7 @@ export default function Page() {
 
   return (
     <div className="flex flex-col gap-1 pt-20 px-8 md:px-20">
-      <h1 className="text-3xl self-center">Map Test 2 (Native American Places + Water)</h1>
+      <h1 className="text-3xl self-center">Map Test 3 (North American Cities)</h1>
       {/* controls */}
       <div className="flex flex-col md:flex-row gap-8 p-4 items-center">
         {/* show labels checkbox */}
