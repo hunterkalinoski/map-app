@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Navbar2() {
   return (
-    <nav className="fixed top-0 left-0 z-20 w-full border-b border-gray-200 bg-white px-2 py-2.5 dark:border-gray-600 dark:bg-gray-900 sm:px-4">
+    <nav className="fixed top-0 left-0 z-20 w-full border-b px-2 py-2.5 border-gray-600 bg-gray-900 sm:px-4">
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <Link href="/" className="flex items-center hover:underline">
           <Image
@@ -13,8 +13,9 @@ export default function Navbar2() {
             alt="Flowbite Logo"
             width={50}
             height={50}
+            unoptimized
           />
-          <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+          <span className="self-center whitespace-nowrap text-xl font-semibold text-white">
             Map App
           </span>
         </Link>
