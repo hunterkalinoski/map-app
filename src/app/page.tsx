@@ -20,6 +20,7 @@ export default function Page() {
                 alt="Map 1 background"
                 width={400}
                 height={200}
+                unoptimized
               />
             </div>
           </li>
@@ -37,6 +38,7 @@ export default function Page() {
                 alt="Map 2 background"
                 width={400}
                 height={200}
+                unoptimized
               />
             </div>
           </li>
@@ -54,6 +56,7 @@ export default function Page() {
                 alt="Map 3 background"
                 width={400}
                 height={200}
+                unoptimized
               />
             </div>
           </li>
@@ -71,6 +74,7 @@ export default function Page() {
                 alt="States Map background"
                 width={400}
                 height={200}
+                unoptimized
               />
             </div>
           </li>
@@ -88,6 +92,7 @@ export default function Page() {
                 alt="Canada map background"
                 width={400}
                 height={200}
+                unoptimized
               />
             </div>
           </li>

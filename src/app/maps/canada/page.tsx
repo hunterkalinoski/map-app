@@ -53,6 +53,7 @@ function RegionImages({
         width={WIDTH}
         height={HEIGHT}
         draggable={false}
+        unoptimized
       />
       <Image
         className="absolute left-0 top-0"
@@ -63,6 +64,7 @@ function RegionImages({
         height={HEIGHT}
         style={{ opacity: fillOpacity / 100 }}
         draggable={false}
+        unoptimized
       />
       <Image
         className="absolute left-0 top-0"
@@ -73,6 +75,7 @@ function RegionImages({
         height={HEIGHT}
         hidden={!showLabel || showLabelGlow}
         draggable={false}
+        unoptimized
       />
       <Image
         className="absolute left-0 top-0"
@@ -83,6 +86,7 @@ function RegionImages({
         height={HEIGHT}
         hidden={!showLabel || !showLabelGlow}
         draggable={false}
+        unoptimized
       />
     </div>
   );
@@ -222,6 +226,7 @@ export default function Page() {
             height={HEIGHT}
             priority
             draggable={false}
+            unoptimized
           />
           <RegionImages
             region="Alberta"
